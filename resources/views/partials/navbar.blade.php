@@ -5,8 +5,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <h1 class="navbar-brand navbar-brand-autodark">
-            <a href=".">
-                <img src="" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+            <a href="#">
+                <img src="/img/logo.svg" width="110" height="32" alt="Tabler" class="navbar-brand-image">
             </a>
         </h1>
         <div class="collapse navbar-collapse" id="sidebar-menu">

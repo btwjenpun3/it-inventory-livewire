@@ -63,58 +63,67 @@
                     <h5 class="modal-title">Order Plan Detail</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-6">
-                            <p class="h3">Supplier</p>
-                            <address>
-                                Street Address<br>
-                                State, City<br>
-                                Region, Postal Code<br>
-                                ltd@example.com
-                            </address>
-                        </div>
-                        <div class="col-6 text-end">
-                            <p class="h3">Buyer</p>
-                            <address>
-                                {{ $buyer_name }}<br>
-                                State, City<br>
-                                Region, Postal Code<br>
-                                ctr@example.com
-                            </address>
-                        </div>
-                        <div class="col-12 my-5">
-                            <h1>Order Plan - {{ $no_kp }}</h1>
+                <div wire:loading wire:target="show">
+                    <div class="text-center">
+                        <div class="progress progress-sm">
+                            <div class="progress-bar progress-bar-indeterminate"></div>
                         </div>
                     </div>
-                    <table class="table table-hover table-transparent table-responsive">
-                        <thead>
-                            <tr>
-                                <th>Material</th>
-                                <th class="text-center">Color</th>
-                                <th class="text-center">Qnt Garment</th>
-                                <th class="text-center">Size</th>
-                                <th class="text-center">Quantity</th>
-                                <th class="text-center">PO. Supplier</th>
-                            </tr>
-                        </thead>
-                        @if (isset($kp))
-                            @foreach ($kp as $k)
+                </div>
+                <div wire:loading.remove wire:target="show">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="h3">Supplier</p>
+                                <address>
+                                    Street Address<br>
+                                    State, City<br>
+                                    Region, Postal Code<br>
+                                    ltd@example.com
+                                </address>
+                            </div>
+                            <div class="col-6 text-end">
+                                <p class="h3">Buyer</p>
+                                <address>
+                                    {{ $buyer_name }}<br>
+                                    State, City<br>
+                                    Region, Postal Code<br>
+                                    ctr@example.com
+                                </address>
+                            </div>
+                            <div class="col-12 my-5">
+                                <h1>Order Plan - {{ $no_kp }}</h1>
+                            </div>
+                        </div>
+                        <table class="table table-hover table-transparent table-responsive">
+                            <thead>
                                 <tr>
-
-                                    <td>
-                                        <p class="strong mb-1">{{ $k->desc }}</p>
-                                        <div class="text-muted">Material Code : {{ $k->item }}</div>
-                                    </td>
-                                    <td class="text-end">{{ $k->color }}</td>
-                                    <td class="text-center">{{ $k->qty_gar }}</td>
-                                    <td class="text-end">{{ $k->size }} {{ $k->uom }}</td>
-                                    <td class="text-end">{{ $k->qty }} {{ $k->uom1 }}</td>
-                                    <td class="text-end">{{ $k->po_sup }}</td>
+                                    <th>Material</th>
+                                    <th>Color</th>
+                                    <th>Qnt Garment</th>
+                                    <th>Size</th>
+                                    <th>Quantity</th>
+                                    <th>PO. Supplier</th>
                                 </tr>
-                            @endforeach
-                        @endif
-                    </table>
+                            </thead>
+                            @if (isset($kp))
+                                @foreach ($kp as $k)
+                                    <tr>
+
+                                        <td>
+                                            <p class="strong mb-1">{{ $k->desc }}</p>
+                                            <div class="text-muted">Material Code : {{ $k->item }}</div>
+                                        </td>
+                                        <td>{{ $k->color }}</td>
+                                        <td>{{ $k->qty_gar }}</td>
+                                        <td>{{ $k->size }} {{ $k->uom }}</td>
+                                        <td>{{ $k->qty }} {{ $k->uom1 }}</td>
+                                        <td>{{ $k->po_sup }}</td>
+                                    </tr>
+                                @endforeach
+                            @endif
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
