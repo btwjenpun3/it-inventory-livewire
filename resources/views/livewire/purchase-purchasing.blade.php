@@ -183,7 +183,7 @@
                                 @enderror
 
                                 <label class="form-label required mt-3">Price</label>
-                                <input type="text" class="form-control @error('price') is-invalid @enderror"
+                                <input type="number" class="form-control @error('price') is-invalid @enderror"
                                     wire:model="price">
                                 @error('price')
                                     <div class="invalid-feedback">{{ $message }}</div>

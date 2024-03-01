@@ -184,8 +184,11 @@
                     <div class="dropdown-menu {{ request()->is('warehouse*') ? 'show' : '' }}">
                         <div class="dropdown-menu-columns">
                             <div class="dropdown-menu-column">
-                                <a class="dropdown-item" href="{{ route('approval.order.plan.index') }}">
+                                <a class="dropdown-item" href="{{ route('warehouse.received.index') }}">
                                     Received
+                                </a>
+                                <a class="dropdown-item" href="{{ route('warehouse.lists.index') }}">
+                                    Lists
                                 </a>
                             </div>
                         </div>

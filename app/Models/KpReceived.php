@@ -5,22 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kp extends Model
+class KpReceived extends Model
 {
     use HasFactory;
 
-    protected $table = 'kp';
+    protected $table = 'kp_received';
 
-    protected $primaryKey = 'no'; 
+    protected $primaryKey = 'id_received'; 
 
     protected $guarded = [
-        'no'
+        'id_received'
     ];
 
     public $timestamps = false;
-
-    public function kpReceived()
-    {
-        return $this->hasOne(KpReceived::class, 'id_kp', 'no');
-    }
 }

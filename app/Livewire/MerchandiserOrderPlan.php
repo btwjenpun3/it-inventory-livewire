@@ -94,7 +94,7 @@ class MerchandiserOrderPlan extends Component
             $item = Item::where('items', $this->material)->first();
             $qtyGarment = OrderBuy::where('po_buyer', $this->po_buyer)->first();
             KpTemporary::create([
-                'user_id'            => 1,
+                'user_id'            => 2,
                 'code_buyer'         => $this->buyer_code,
                 'po_buyer'           => $this->po_buyer,
                 'item'               => $this->material,

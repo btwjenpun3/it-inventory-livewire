@@ -38,7 +38,7 @@ class ApprovalApproved extends Component
              
             $this->render();               
         } catch (\Illuminate\Validation\ValidationException $e) {
-            Log::channel('master')->error('(Master Allocation) Theres an error : ' . $e->getMessage());
+            Log::channel('master')->error('(Approval) Theres an error : ' . $e->getMessage());
             throw $e;
         } 
     }

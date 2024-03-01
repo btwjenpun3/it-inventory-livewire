@@ -12,6 +12,7 @@ use App\Livewire\MasterMaterial;
 use App\Livewire\MasterSupplier;
 use App\Livewire\MerchandiserOrderPlan;
 use App\Livewire\PurchasePurchasing;
+use App\Livewire\WarehouseList;
 use App\Livewire\WarehouseReceived;
 use Illuminate\Support\Facades\Route;
 
@@ -47,3 +48,5 @@ Route::get('/approval/rejected', ApprovalRejected::class)->name('approval.reject
 Route::get('/purchase/purchasing', PurchasePurchasing::class)->name('purchase.purchasing.index');
 
 Route::get('/warehouse/received', WarehouseReceived::class)->name('warehouse.received.index');
+
+Route::get('/warehouse/lists', WarehouseList::class)->name('warehouse.lists.index');
