@@ -3,6 +3,7 @@
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Master\MasterAllocation;
 use App\Livewire\ApprovalApproved;
+use App\Livewire\ApprovalBuyerOrder;
 use App\Livewire\ApprovalOrderPlan;
 use App\Livewire\ApprovalRejected;
 use App\Livewire\Dashboard;
@@ -11,9 +12,15 @@ use App\Livewire\MasterBuyer;
 use App\Livewire\MasterMaterial;
 use App\Livewire\MasterSupplier;
 use App\Livewire\MerchandiserOrderPlan;
+use App\Livewire\MerchandiserReceivedOrderBuyer;
+use App\Livewire\ProductionRequestList;
+use App\Livewire\ProductionRequestMaterial;
 use App\Livewire\PurchasePurchasing;
+use App\Livewire\QcPassList;
+use App\Livewire\QcPassMaterial;
 use App\Livewire\WarehouseList;
 use App\Livewire\WarehouseReceived;
+use App\Livewire\WarehouseRequestList;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,7 +46,11 @@ Route::get('/master/supplier', MasterSupplier::class)->name('master.supplier.ind
 
 Route::get('/merchandiser/order-plan', MerchandiserOrderPlan::class)->name('merchandiser.order.plan.index');
 
+Route::get('/merchandiser/received-order-plan', MerchandiserReceivedOrderBuyer::class)->name('merchandiser.received.order.plan.index');
+
 Route::get('/approval/order-plan', ApprovalOrderPlan::class)->name('approval.order.plan.index');
+
+Route::get('/approval/buyer-order', ApprovalBuyerOrder::class)->name('approval.buyer.order.index');
 
 Route::get('/approval/approved', ApprovalApproved::class)->name('approval.approved.index');
 
@@ -50,3 +61,13 @@ Route::get('/purchase/purchasing', PurchasePurchasing::class)->name('purchase.pu
 Route::get('/warehouse/received', WarehouseReceived::class)->name('warehouse.received.index');
 
 Route::get('/warehouse/lists', WarehouseList::class)->name('warehouse.lists.index');
+
+Route::get('/warehouse/request-list', WarehouseRequestList::class)->name('warehouse.request.list.index');
+
+Route::get('/qcpass/material', QcPassMaterial::class)->name('qcpass.material.index');
+
+Route::get('/qcpass/lists', QcPassList::class)->name('qcpass.lists.index');
+
+Route::get('/production/request-material', ProductionRequestMaterial::class)->name('production.request.material.index');
+
+Route::get('/production/request-list', ProductionRequestList::class)->name('production.request.list.index');

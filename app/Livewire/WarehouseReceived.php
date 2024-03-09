@@ -97,6 +97,7 @@ class WarehouseReceived extends Component
             ]);
             if($storeData) {
                 Kp::where('no', $this->id_kp)->update([
+                    'status' => 'Received',
                     'no_trans_rcvd' => $noTrans,
                     'qty_rcvd' => $this->qty_received
                 ]);

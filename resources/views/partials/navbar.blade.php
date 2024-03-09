@@ -89,6 +89,9 @@
                     <div class="dropdown-menu {{ request()->is('merchandiser*') ? 'show' : '' }}">
                         <div class="dropdown-menu-columns">
                             <div class="dropdown-menu-column">
+                                <a class="dropdown-item" href="{{ route('merchandiser.received.order.plan.index') }}">
+                                    Received Order Plan
+                                </a>
                                 <a class="dropdown-item" href="{{ route('merchandiser.order.plan.index') }}">
                                     Order Plan
                                 </a>
@@ -119,6 +122,9 @@
                             <div class="dropdown-menu-column">
                                 <a class="dropdown-item" href="{{ route('approval.order.plan.index') }}">
                                     Order Plan
+                                </a>
+                                <a class="dropdown-item" href="{{ route('approval.buyer.order.index') }}">
+                                    Buyer Order
                                 </a>
                                 <a class="dropdown-item" href="{{ route('approval.approved.index') }}">
                                     Approved
@@ -188,7 +194,75 @@
                                     Received
                                 </a>
                                 <a class="dropdown-item" href="{{ route('warehouse.lists.index') }}">
+                                    List
+                                </a>
+                                <a class="dropdown-item" href="{{ route('warehouse.request.list.index') }}">
+                                    Request List
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown {{ request()->is('qcpass*') ? 'active' : '' }}">
+                    <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown"
+                        data-bs-auto-close="false" role="button" aria-expanded="true">
+                        <span
+                            class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-a-b"
+                                width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M3 16v-5.5a2.5 2.5 0 0 1 5 0v5.5m0 -4h-5" />
+                                <path d="M12 6l0 12" />
+                                <path d="M16 16v-8h3a2 2 0 0 1 0 4h-3m3 0a2 2 0 0 1 0 4h-3" />
+                            </svg>
+                        </span>
+                        <span class="nav-link-title">
+                            QC Pass
+                        </span>
+                    </a>
+                    <div class="dropdown-menu {{ request()->is('qcpass*') ? 'show' : '' }}">
+                        <div class="dropdown-menu-columns">
+                            <div class="dropdown-menu-column">
+                                <a class="dropdown-item" href="{{ route('qcpass.material.index') }}">
+                                    Pass Material
+                                </a>
+                                <a class="dropdown-item" href="{{ route('qcpass.lists.index') }}">
                                     Lists
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown {{ request()->is('production*') ? 'active' : '' }}">
+                    <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown"
+                        data-bs-auto-close="false" role="button" aria-expanded="true">
+                        <span
+                            class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-asset"
+                                width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M9 15m-6 0a6 6 0 1 0 12 0a6 6 0 1 0 -12 0" />
+                                <path d="M9 15m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                <path d="M19 5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                <path d="M14.218 17.975l6.619 -12.174" />
+                                <path d="M6.079 9.756l12.217 -6.631" />
+                                <path d="M9 15m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                            </svg>
+                        </span>
+                        <span class="nav-link-title">
+                            Production
+                        </span>
+                    </a>
+                    <div class="dropdown-menu {{ request()->is('production*') ? 'show' : '' }}">
+                        <div class="dropdown-menu-columns">
+                            <div class="dropdown-menu-column">
+                                <a class="dropdown-item" href="{{ route('production.request.material.index') }}">
+                                    Request Material
+                                </a>
+                                <a class="dropdown-item" href="{{ route('production.request.list.index') }}">
+                                    Request List
                                 </a>
                             </div>
                         </div>

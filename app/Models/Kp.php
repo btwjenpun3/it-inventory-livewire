@@ -23,4 +23,9 @@ class Kp extends Model
     {
         return $this->hasOne(KpReceived::class, 'id_kp', 'no');
     }
+
+    public function buyer()
+    {
+        return $this->belongsTo(OrderBuy::class, 'po_buyer', 'po_buyer');
+    }
 }
